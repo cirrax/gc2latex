@@ -1,3 +1,14 @@
+gc2latex (0.2.2.trb1~bpo80+2~cirrax2) unstable; urgency=low
+
+  * build for jessie
+  * fix: negativ price should be negativ
+  * fix: negativ quantity should be negativ !
+  * fix rounding for negativ amounts
+  * remove unused round function
+  * fetch price and quantity only once.
+
+ -- Benedikt Trefzer <benedikt.trefzer@cirrax.com>  Mon, 08 Dec 2014 10:27:23 +0200
+
 gc2latex (0.2.1.trb1~bpo70+2~cirrax2) unstable; urgency=low
 
   * build for wheezy
