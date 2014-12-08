@@ -117,10 +117,10 @@ sub CalculateDiscount {
 
 sub getAmount ($$) {
     my ($self,$amounttype) = @_;
-    my $subtotal = $self->getQuantity() * $self->getPrice();
 
     my $quantity = $self->getQuantity();
     my $price = $self->getPrice();
+    my $subtotal = $quantity * $price;
 
     my $tax = 0;
 
