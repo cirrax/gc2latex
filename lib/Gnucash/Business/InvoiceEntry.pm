@@ -180,9 +180,4 @@ sub getAmount ($$) {
     }
 }
 
-sub round($) {
-    my ($value) = @_;
-    return int($value * 100 + 0.5) / 100;
-}
-
 1;
