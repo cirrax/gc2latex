@@ -140,7 +140,12 @@ sub replace($$) {
 
 sub round($) {
     my ($value) = @_;
-    return int($value * 100 + 0.5) / 100;
+
+    if ($value < 0) {
+      return -1 * int($value * -100 + 0.5) / 100;
+    } else {
+      return int($value * 100 + 0.5) / 100;
+    }
 }
 
 main($ARGV[0], $ARGV[1], $ARGV[2]);

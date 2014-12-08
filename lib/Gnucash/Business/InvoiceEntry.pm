@@ -33,12 +33,12 @@ sub fillInfo($$) {
 	  $self->{info}{action} = $entry->child("entry:action")->value();
         }
 	$self->{info}{quantity} = 0;
-	if ($entry->child("entry:qty")->value() =~ /(\d+)\/(\d+)/) {
+	if ($entry->child("entry:qty")->value() =~ /([-\d]+)\/(\d+)/) {
 	     $self->{info}{quantity} = $1/$2;
 	}
 
 	$self->{info}{price} = 0;
-	if ($entry->child("entry:i-price")->value() =~ /(\d+)\/(\d+)/) {
+	if ($entry->child("entry:i-price")->value() =~ /([-\d]+)\/(\d+)/) {
 	    $self->{info}{price} = $1/$2;
 	}
 
@@ -117,10 +117,10 @@ sub CalculateDiscount {
 
 sub getAmount ($$) {
     my ($self,$amounttype) = @_;
-    my $subtotal = $self->getQuantity() * $self->getPrice();
 
     my $quantity = $self->getQuantity();
     my $price = $self->getPrice();
+    my $subtotal = $quantity * $price;
 
     my $tax = 0;
 
@@ -178,11 +178,6 @@ sub getAmount ($$) {
     else {
       die 'Unknown Amount ' . $amounttype ;
     }
-}
-
-sub round($) {
-    my ($value) = @_;
-    return int($value * 100 + 0.5) / 100;
 }
 
 1;
