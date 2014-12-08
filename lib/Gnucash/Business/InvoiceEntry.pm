@@ -33,7 +33,7 @@ sub fillInfo($$) {
 	  $self->{info}{action} = $entry->child("entry:action")->value();
         }
 	$self->{info}{quantity} = 0;
-	if ($entry->child("entry:qty")->value() =~ /(\d+)\/(\d+)/) {
+	if ($entry->child("entry:qty")->value() =~ /([-\d]+)\/(\d+)/) {
 	     $self->{info}{quantity} = $1/$2;
 	}
 
