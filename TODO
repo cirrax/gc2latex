@@ -1,0 +1,12 @@
+TODO
+====
+
+Tax calculation
+---------------
+Gnucash does for each tax line a rounding.
+This leads to different taxes caclulated by gnucash or gc2latex if a tax consists of multiple values.
+
+For Tax and rounding also see https://lists.gnucash.org/pipermail/gnucash-devel/2009-January/024605.html
+and the gnucash bugs mentioned there.
+ 
+
