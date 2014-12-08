@@ -38,7 +38,7 @@ sub fillInfo($$) {
 	}
 
 	$self->{info}{price} = 0;
-	if ($entry->child("entry:i-price")->value() =~ /(\d+)\/(\d+)/) {
+	if ($entry->child("entry:i-price")->value() =~ /([-\d]+)\/(\d+)/) {
 	    $self->{info}{price} = $1/$2;
 	}
 
